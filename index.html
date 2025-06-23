@@ -58,7 +58,7 @@
       color: #fff;
     }
     .email-btn { background: #3498db; }
-    .whatsapp-btn { background: #25d366; }
+    .sms-btn { background: #2ecc71; }
     .map {
       margin: 40px 0 20px;
       border-radius: 8px;
@@ -77,7 +77,7 @@
 <body>
   <div class="container">
     <header>
-      <img src="c:\Users\INFINITY Technology\Desktop\photo_2025-06-21_00-39-43.jpg" alt="شعار المركز" />
+      <img src="c:\Users\INFINITY Technology\Desktop\rouane\index.html\photo_2025-06-21_00-39-43.jpg" alt="شعار المركز" />
       <h1>مركز روان للتشخيص الطبي</h1>
     </header>
 
@@ -102,7 +102,7 @@
 
     <div class="section contact">
       <h3>📞 تواصل معنا:</h3>
-      <p>📧 <a href="mailto:Rouanecentere@gmail.com">akalabdelhakamine38@gmail.com</a></p>
+      <p>📧 <a href="mailto:akalabdelhakamine38@gmail.com">akalabdelhakamine38@gmail.com</a></p>
       <p>📱 0553704235 · 0556267319</p>
       <p>📍 إقامة القدس (د/ فتاح) بجانب مسجد القدس، برج بونعامة - تيسمسيلت</p>
     </div>
@@ -127,7 +127,7 @@
       <label>📝 ملاحظات إضافية:</label>
       <textarea id="notes" rows="4"></textarea>
       <button type="button" class="email-btn" onclick="sendEmail()">📩 إرسال عبر الإيميل</button>
-      <button type="button" class="whatsapp-btn" onclick="sendWhatsApp()">💬 إرسال عبر واتساب</button>
+      <button type="button" class="sms-btn" onclick="sendSMS()">📱 إرسال عبر SMS</button>
     </form>
 
     <div class="map">
@@ -155,12 +155,12 @@
     function sendEmail() {
       const body = encodeURIComponent(getFormData());
       const subject = encodeURIComponent("حجز موعد من مركز روان");
-      location.href = `mailto:Rouanecentere@gmail.com?subject=${subject}&body=${body}`;
+      location.href = `mailto:akalabdelhakamine38@gmail.com?subject=${subject}&body=${body}`;
     }
 
-    function sendWhatsApp() {
-      const msg = encodeURIComponent(getFormData());
-      window.open(`https://wa.me/213665322017?text=${msg}`, "_blank");
+    function sendSMS() {
+      const smsBody = encodeURIComponent(getFormData());
+      window.location.href = `sms:+213553704235?body=${smsBody}`;
     }
   </script>
 </body>
