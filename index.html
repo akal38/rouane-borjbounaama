@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مركز روان للتشخيص الطبي</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding: 20px 0;
+      background: #fff;
+      border-bottom: 3px solid #2980b9;
+    }
+    header img { max-height: 80px; }
+    h1 { margin: 10px 0; color: #2c3e50; }
+    .section {
+      margin: 30px 0;
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .description, .services p, .contact p { font-size: 17px; line-height: 1.6; }
+    .services h3, .contact h3, form h3 { margin-bottom: 15px; color: #2980b9; }
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+      margin-right: 10px;
+      color: #fff;
+    }
+    .email-btn { background: #3498db; }
+    .whatsapp-btn { background: #25d366; }
+    .map {
+      margin: 40px 0 20px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+    footer a { color: #bbb; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="c:\Users\INFINITY Technology\Desktop\photo_2025-06-21_00-39-43.jpg" alt="شعار المركز" />
+      <h1>مركز روان للتشخيص الطبي</h1>
+    </header>
+
+    <div class="section description">
+      <p>
+        يوفر لكم المركز رعاية طبية بأحدث أجهزة السكانير والاستكشافات بالأشعة من الإيكوڨرافي الى قياس كثافة العظام و يوفر ايضا اول مخبر للتحاليل الطبية في برج بونعامة.
+      </p>
+    </div>
+
+    <div class="section services">
+      <h3>🔬 الخدمات الطبية المتوفرة:</h3>
+      <p>
+        ❤️ أمراض القلب<br>
+        👁️ أمراض العيون<br>
+        🙍 طب الأطفال<br>
+        👩‍🦰 أمراض النساء<br>
+        📋 الطب العام<br>
+        🍚 امراض السكري و الغدد الصماء<br>
+        ✍️ أمراض المعدة والأمعاء الدقيقة
+      </p>
+    </div>
+
+    <div class="section contact">
+      <h3>📞 تواصل معنا:</h3>
+      <p>📧 <a href="mailto:Rouanecentere@gmail.com">akalabdelhakamine38@gmail.com</a></p>
+      <p>📱 0553704235 · 0556267319</p>
+      <p>📍 إقامة القدس (د/ فتاح) بجانب مسجد القدس، برج بونعامة - تيسمسيلت</p>
+    </div>
+
+    <form class="section" id="appointmentForm">
+      <h3>📄 حجز موعد</h3>
+      <label>👤 الاسم الكامل:</label>
+      <input type="text" id="name" required>
+      <label>📞 رقم الهاتف:</label>
+      <input type="tel" id="phone" required>
+      <label>📋 الحالة:</label>
+      <select id="condition" required>
+        <option value="">-- اختر الحالة --</option>
+        <option>أمراض القلب</option>
+        <option>أمراض العيون</option>
+        <option>طب الأطفال</option>
+        <option>أمراض النساء</option>
+        <option>الطب العام</option>
+        <option>أمراض السكري والغدد الصماء</option>
+        <option>أمراض المعدة والأمعاء الدقيقة</option>
+      </select>
+      <label>📝 ملاحظات إضافية:</label>
+      <textarea id="notes" rows="4"></textarea>
+      <button type="button" class="email-btn" onclick="sendEmail()">📩 إرسال عبر الإيميل</button>
+      <button type="button" class="whatsapp-btn" onclick="sendWhatsApp()">💬 إرسال عبر واتساب</button>
+    </form>
+
+    <div class="map">
+      <iframe 
+        src="https://www.google.com/maps?q=35.8505,1.6171&hl=ar&z=17&output=embed"
+        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+
+    <footer>
+      جميع الحقوق محفوظة © مركز روان للتشخيص الطبي 2025<br>
+      <a href="mailto:akalabdelhakamine38@gmail.com">Created by akalabdelhakamine38@gmail.com</a>
+    </footer>
+  </div>
+
+  <script>
+    function getFormData() {
+      const n = document.getElementById("name").value;
+      const p = document.getElementById("phone").value;
+      const c = document.getElementById("condition").value;
+      const m = document.getElementById("notes").value;
+      return `👤 الاسم: ${n}\n📞 الهاتف: ${p}\n📋 الحالة: ${c}\n📝 ملاحظات: ${m}`;
+    }
+
+    function sendEmail() {
+      const body = encodeURIComponent(getFormData());
+      const subject = encodeURIComponent("حجز موعد من مركز روان");
+      location.href = `mailto:Rouanecentere@gmail.com?subject=${subject}&body=${body}`;
+    }
+
+    function sendWhatsApp() {
+      const msg = encodeURIComponent(getFormData());
+      window.open(`https://wa.me/213665322017?text=${msg}`, "_blank");
+    }
+  </script>
+</body>
+</html>
